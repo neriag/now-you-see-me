@@ -4,7 +4,7 @@
 	"description": "random movie chooser",
 	"scripts": {
 		"start:server": "webpack-dev-server --config ./webpack.config.dev.js --hot --inline --progress --open",
-		"start": "npm-run-all --parallel start:server lint:watch test:watch",
+		"start": "npm-run-all --parallel start:server lint:watch test:watch start-mockapi",
 		"lint": "esw webpack.config.* src --color",
 		"lint:watch": "yarn run lint --watch",
 		"security-check": "nsp check",
@@ -23,6 +23,7 @@
 	"author": "Yonatan Kreiner & Neria Glick",
 	"license": "MIT",
 	"dependencies": {
+		"axios": "^0.17.1",
 		"react": "^16.2.0",
 		"react-dom": "^16.2.0"
 	},

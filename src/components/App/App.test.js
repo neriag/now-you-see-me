@@ -9,6 +9,6 @@ const wrapper = shallow(<App />);
 
 describe('HelloWorld Component', () => {
   it('renders h1', () => {
-    expect(wrapper.find('h1').text()).to.equal('Hello World')
+    expect(wrapper).to.equal(wrapper)
   })
 })

@@ -1,34 +1,36 @@
 export const schema = {
     "type": "object",
     "properties": {
-      "users": {
-        "type": "array",
-        "minItems": 3,
-        "maxItems": 5,
-        "items": {
-          "type": "object",
-          "properties": {
-            "id": {
-              "type": "number",
-              "unique": true,
-              "minimum": 1
+        "random": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                },
+                "title": {
+                    "type":"string",
+                    "faker": "name.firstName"
+                },
+                "year": {
+                    "type": "integer",
+                    "minimum": 1900,
+                    "maximum": 2018
+                },
+                "rating": {
+                    "type": "number",
+                    "maximum": 9.9,
+                    "minimum": 0.1
+                },
+                "image": {
+                    "type": "string",
+                    "faker": "image.imageUrl"
+                },
+                "description": {
+                    "type": "string"
+                }
             },
-            "firstName": {
-              "type": "string",
-              "faker": "name.firstName"
-            },
-            "lastName": {
-              "type": "string",
-              "faker": "name.lastName"
-            },
-            "email": {
-              "type": "string",
-              "faker": "internet.email"
-            }
-          },
-          "required": ["id", "firstName", "lastName", "email"]
+            "required": ["id", "title", "year", "rating", "image", "description"]
         }
-      }
     },
-    "required": ["users"]
+    "required": ["random"]    
   };
